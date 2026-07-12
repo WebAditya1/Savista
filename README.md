@@ -1,4 +1,4 @@
-# UPVC Premium Website
+# Savista — Precision uPVC Solutions
 
 A modern, production-ready full-stack website for a UPVC doors and windows manufacturer.
 
@@ -24,7 +24,7 @@ upvc-premium-website/
 │   │   ├── services/     # API client
 │   │   └── utils/        # Constants, helpers
 │   └── public/           # Static assets, sitemap, robots.txt
-├── backend/           # Express API (deploy to Render/AWS)
+├── backend/           # Express API (deploy to Render)
 │   └── src/
 │       ├── controllers/
 │       ├── middleware/
@@ -99,6 +99,7 @@ See `frontend/.env.example` and `backend/.env.example`.
 - [UI Wireframe](docs/WIREFRAME.md)
 - [Database Schema](docs/DATABASE_SCHEMA.md)
 - [Deployment Guide](docs/DEPLOYMENT.md)
+- [Demo hosting (Vercel + Render + Atlas)](docs/DEMO-HOSTING.md)
 
 ## Future Improvements
 
