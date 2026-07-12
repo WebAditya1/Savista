@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Savista logo palette: navy #004088 + teal #0898a0 */
+  --color-brand-50: #e8f2fa;
+  --color-brand-100: #c5dff2;
+  --color-brand-200: #8ec0e8;
+  --color-brand-300: #4d98d4;
+  --color-brand-400: #0066b3;
+  --color-brand-500: #005099;
+  --color-brand-600: #004088;
+  --color-brand-700: #003066;
+  --color-brand-800: #002048;
+  --color-brand-900: #001530;
+
+  --color-accent-300: #40c4cc;
+  --color-accent-400: #20b0b8;
+  --color-accent-500: #0898a0;
+  --color-accent-600: #067880;
+  --color-accent-700: #045860;
+
+  --color-surface: #f4f8fb;
+  --color-surface-dark: #001530;
+
+  --font-display: 'DM Sans', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-body text-slate-800 bg-white overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg
+           bg-gradient-to-r from-brand-600 to-accent-500 text-white font-medium
+           shadow-lg shadow-brand-600/25 hover:shadow-xl hover:shadow-accent-500/30
+           hover:-translate-y-0.5 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg
+           border-2 border-white/30 text-white font-medium backdrop-blur-sm
+           hover:bg-white/10 hover:border-accent-400/50 transition-all duration-300;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg
+           border-2 border-brand-600 text-brand-600 font-medium
+           hover:bg-brand-600 hover:text-white transition-all duration-300;
+  }
+
+  .section-padding {
+    @apply py-10 md:py-14 lg:py-16;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card-premium {
+    @apply bg-white rounded-2xl shadow-lg shadow-brand-600/5 border border-slate-100
+           hover:shadow-xl hover:shadow-accent-500/10 hover:-translate-y-1 transition-all duration-500;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-600 via-brand-400 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
