@@ -270,5 +270,9 @@ async function seed() {
 
 seed().catch((err) => {
   console.error('Seed failed:', err);
+  if (process.env.SEED_IF_EMPTY === 'true') {
+    console.warn('Continuing without seed (SEED_IF_EMPTY=true)');
+    process.exit(0);
+  }
   process.exit(1);
 });

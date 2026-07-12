@@ -5,8 +5,10 @@ services:
     name: savista-api
     runtime: node
     rootDir: backend
-    buildCommand: npm install && npm run build
-    startCommand: npm run seed:prod && npm start
+    # NODE_ENV=production skips devDependencies; TypeScript is required to build.
+    buildCommand: npm install --include=dev && npm run build
+    # Seed is best-effort; API must start even if Atlas is not ready yet.
+    startCommand: npm run seed:prod; npm start
     healthCheckPath: /health
     plan: free
     envVars:
