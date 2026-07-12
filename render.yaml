@@ -6,12 +6,14 @@ services:
     runtime: node
     rootDir: backend
     buildCommand: npm install && npm run build
-    startCommand: npm start
+    startCommand: npm run seed:prod && npm start
     healthCheckPath: /health
     plan: free
     envVars:
       - key: NODE_ENV
         value: production
+      - key: SEED_IF_EMPTY
+        value: "true"
       - key: MONGODB_URI
         sync: false
       - key: FRONTEND_URL
